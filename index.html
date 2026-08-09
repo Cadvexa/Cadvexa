@@ -11,19 +11,20 @@
     content="Cadvexa provides CAD drafting, architectural documentation, structural drafting, shop drawings, Revit and BIM documentation, and as-built drawing support for architecture, construction and engineering teams."
   >
 
+  <meta name="robots" content="index, follow">
+
   <style>
     :root {
       --navy: #0a1c2d;
-      --navy-2: #102a40;
+      --navy-light: #102a40;
       --blue: #1769aa;
       --blue-dark: #0e558d;
       --ice: #eef5f9;
-      --light: #f7f9fb;
+      --light: #f6f8fa;
       --white: #ffffff;
-      --text: #253442;
+      --text: #263746;
       --muted: #657686;
       --border: #dce5eb;
-      --line: #e8eef2;
       --shadow: 0 14px 40px rgba(10, 28, 45, 0.08);
     }
 
@@ -49,18 +50,25 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(1160px, 92%);
       margin: 0 auto;
     }
 
-    /* ---------------- NAVIGATION ---------------- */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.97);
+      background: rgba(255, 255, 255, 0.97);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(8px);
     }
@@ -77,7 +85,7 @@
       color: var(--navy);
       font-size: 25px;
       font-weight: 800;
-      letter-spacing: 1.7px;
+      letter-spacing: 1.8px;
     }
 
     .logo span {
@@ -108,38 +116,59 @@
       border-radius: 5px;
     }
 
-    /* ---------------- HERO ---------------- */
+    .nav-cta:hover {
+      background: var(--blue);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(10,28,45,0.98), rgba(23,105,170,0.92));
+      background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--navy-light),
+        var(--blue-dark)
+      );
       color: var(--white);
-      padding: 118px 0 110px;
+      padding: 120px 0 110px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      right: -220px;
+      top: -220px;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(255,255,255,0.12);
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 50%;
-      right: -160px;
-      top: -150px;
+      right: 40px;
+      bottom: -180px;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 850px;
+      max-width: 870px;
     }
 
     .eyebrow {
       display: inline-block;
       margin-bottom: 22px;
-      color: #c8e5f8;
+      color: #c9e5f7;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 1.7px;
@@ -155,20 +184,20 @@
     }
 
     .hero h1 span {
-      color: #cfeafb;
+      color: #cdeafa;
     }
 
     .hero-description {
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 34px;
-      color: #e3eef5;
+      color: #e2edf4;
       font-size: 19px;
     }
 
     .hero-note {
-      max-width: 700px;
+      max-width: 760px;
       margin-top: 18px;
-      color: #bdd2df;
+      color: #b9cedc;
       font-size: 13px;
     }
 
@@ -196,16 +225,27 @@
       transform: translateY(-2px);
     }
 
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--blue);
+    }
+
     .btn-outline {
-      border: 1px solid rgba(255,255,255,0.5);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       color: var(--white);
     }
 
     .btn-outline:hover {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
     }
 
-    /* ---------------- INTRO STRIP ---------------- */
+    /* =========================
+       POSITIONING STRIP
+    ========================= */
 
     .intro-strip {
       background: var(--white);
@@ -228,9 +268,9 @@
 
     .intro-item strong {
       display: block;
+      margin-bottom: 5px;
       color: var(--navy);
       font-size: 15px;
-      margin-bottom: 5px;
     }
 
     .intro-item span {
@@ -238,14 +278,16 @@
       font-size: 13px;
     }
 
-    /* ---------------- GENERAL ---------------- */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
       padding: 90px 0;
     }
 
     .section-heading {
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 48px;
     }
 
@@ -272,7 +314,9 @@
       font-size: 17px;
     }
 
-    /* ---------------- ABOUT ---------------- */
+    /* =========================
+       ABOUT / CAPABILITIES
+    ========================= */
 
     .about-grid {
       display: grid;
@@ -326,7 +370,9 @@
       font-weight: 800;
     }
 
-    /* ---------------- SERVICES ---------------- */
+    /* =========================
+       SERVICES
+    ========================= */
 
     .services {
       background: var(--light);
@@ -371,7 +417,9 @@
       font-size: 14px;
     }
 
-    /* ---------------- DELIVERABLES ---------------- */
+    /* =========================
+       INPUTS / DELIVERABLES
+    ========================= */
 
     .deliverables-grid {
       display: grid;
@@ -383,9 +431,9 @@
       display: flex;
       gap: 18px;
       padding: 24px;
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: 7px;
-      background: var(--white);
     }
 
     .deliverable-icon {
@@ -396,6 +444,7 @@
       background: var(--ice);
       border-radius: 5px;
       color: var(--blue);
+      font-size: 12px;
       font-weight: 800;
     }
 
@@ -410,11 +459,17 @@
       font-size: 13px;
     }
 
-    /* ---------------- WHO WE SUPPORT ---------------- */
+    /* =========================
+       WHO WE SUPPORT
+    ========================= */
 
     .audience {
       background: var(--navy);
       color: var(--white);
+    }
+
+    .audience .section-kicker {
+      color: #8ec9eb;
     }
 
     .audience .section-heading h2 {
@@ -433,8 +488,8 @@
 
     .audience-card {
       padding: 30px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 7px;
     }
 
@@ -449,7 +504,37 @@
       font-size: 14px;
     }
 
-    /* ---------------- PROCESS ---------------- */
+    /* =========================
+       WHY CADVEXA
+    ========================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+    }
+
+    .why-card h3 {
+      margin-bottom: 9px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
 
     .process {
       background: var(--light);
@@ -462,7 +547,6 @@
     }
 
     .process-card {
-      position: relative;
       padding: 28px 23px;
       background: var(--white);
       border: 1px solid var(--border);
@@ -487,60 +571,77 @@
       font-size: 13px;
     }
 
-    /* ---------------- PROJECTS / PORTFOLIO PLACEHOLDER ---------------- */
+    /* =========================
+       PORTFOLIO
+    ========================= */
 
-    .portfolio-note {
-      padding: 38px;
+    .portfolio-intro {
+      max-width: 850px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .portfolio-placeholder {
+      min-height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      text-align: center;
       background: var(--light);
       border: 1px dashed #b9c9d5;
-      border-radius: 8px;
-      text-align: center;
+      border-radius: 7px;
     }
 
-    .portfolio-note h3 {
-      margin-bottom: 9px;
+    .portfolio-placeholder h3 {
+      margin-bottom: 8px;
       color: var(--navy);
-      font-size: 22px;
+      font-size: 18px;
     }
 
-    .portfolio-note p {
-      max-width: 680px;
-      margin: 0 auto 20px;
+    .portfolio-placeholder p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    .portfolio-note small {
-      display: block;
-      color: var(--blue);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-    }
-
-    /* ---------------- CTA ---------------- */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
-      background:
-        linear-gradient(135deg, var(--blue), var(--navy));
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--navy)
+      );
       color: var(--white);
       text-align: center;
     }
 
     .cta h2 {
       margin-bottom: 15px;
+      color: var(--white);
       font-size: clamp(31px, 4vw, 45px);
       line-height: 1.12;
     }
 
     .cta p {
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto 28px;
       color: #dceaf3;
       font-size: 17px;
     }
 
-    /* ---------------- CONTACT ---------------- */
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact-box {
       max-width: 820px;
@@ -578,7 +679,9 @@
       font-size: 12px;
     }
 
-    /* ---------------- FOOTER ---------------- */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: #061521;
@@ -604,9 +707,12 @@
       font-size: 12px;
     }
 
-    /* ---------------- RESPONSIVE ---------------- */
+    /* =========================
+       RESPONSIVE
+    ========================= */
 
     @media (max-width: 900px) {
+
       .nav-links {
         display: none;
       }
@@ -623,12 +729,21 @@
         grid-template-columns: 1fr;
       }
 
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 650px) {
+
       .hero {
         padding: 82px 0;
       }
@@ -661,6 +776,7 @@
       }
 
       .btn {
+        width: 100%;
         text-align: center;
       }
 
@@ -674,539 +790,972 @@
 
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="#home" class="logo">CAD<span>VEXA</span></a>
-
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#capabilities">Capabilities</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#contact" class="nav-cta">Start a Conversation</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="eyebrow">
-          CAD • Architectural Documentation • BIM
-        </div>
-
-        <h1>
-          Drafting support that helps
-          <span>project teams move.</span>
-        </h1>
-
-        <p class="hero-description">
-          Cadvexa provides CAD drafting and documentation support for
-          architecture, construction and engineering teams that need
-          dependable production capacity without adding permanent
-          drafting overhead.
-        </p>
-
-        <div class="buttons">
-          <a href="#contact" class="btn btn-primary">
-            Discuss Your Project
-          </a>
-
-          <a href="#services" class="btn btn-outline">
-            Explore Capabilities
-          </a>
-        </div>
-
-        <p class="hero-note">
-          Suitable for individual drawing requirements, project-based
-          support and recurring documentation workflows.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- POSITIONING STRIP -->
-  <div class="intro-strip">
-    <div class="container intro-grid">
-
-      <div class="intro-item">
-        <strong>Production Support</strong>
-        <span>Additional drafting capacity when your internal team needs it.</span>
-      </div>
-
-      <div class="intro-item">
-        <strong>Documentation Focused</strong>
-        <span>Plans, sections, details, schedules, revisions and drawing packages.</span>
-      </div>
-
-      <div class="intro-item">
-        <strong>Flexible Engagement</strong>
-        <span>Support can be structured around your project requirements.</span>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ABOUT / CAPABILITIES -->
-  <section id="capabilities">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-kicker">Capabilities</span>
-
-        <h2>
-          A practical extension of your project team.
-        </h2>
-
-        <p>
-          The goal is simple: take defined drafting and documentation
-          requirements off your team's workload and return organized,
-          usable drawing output.
-        </p>
-      </div>
-
-      <div class="about-grid">
-
-        <div class="about-copy">
-
-          <p>
-            Cadvexa supports architecture, construction and engineering
-            workflows with CAD and documentation services across
-            different stages of a project.
-          </p>
-
-          <p>
-            You can provide existing drawings, markups, sketches,
-            references or project requirements. We work from the
-            information provided, clarify the scope and produce the
-            required drafting output.
-          </p>
-
-          <p>
-            The emphasis is on clear communication, organized
-            documentation and a workflow that makes revisions easier
-            to manage.
-          </p>
-
-        </div>
-
-        <div class="capability-panel">
-
-          <h3>Core capabilities</h3>
-
-          <ul class="capability-list">
-            <li>2D CAD drafting and drawing production</li>
-            <li>Architectural plans, elevations and sections</li>
-            <li>Construction details and documentation</li>
-            <li>Structural drafting support</li>
-            <li>Shop and fabrication drawing support</li>
-            <li>Revit and BIM documentation</li>
-            <li>Drawing revisions and markup incorporation</li>
-            <li>As-built and record drawing updates</li>
-          </ul>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-kicker">Services</span>
-
-        <h2>
-          Drafting and documentation support.
-        </h2>
-
-        <p>
-          Focused services that can be used individually or combined
-          into a broader project workflow.
-        </p>
-      </div>
-
-      <div class="service-grid">
-
-        <article class="service-card">
-          <div class="service-number">01</div>
-          <h3>CAD Drafting</h3>
-          <p>
-            2D CAD drawing production, updates and documentation based
-            on supplied project information and requirements.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-number">02</div>
-          <h3>Architectural Documentation</h3>
-          <p>
-            Plans, elevations, sections, details and supporting
-            construction documentation.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-number">03</div>
-          <h3>Structural Drafting</h3>
-          <p>
-            Drafting support for structural plans, details and
-            construction-related drawing packages.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-number">04</div>
-          <h3>Shop Drawings</h3>
-          <p>
-            Fabrication and installation drawing support based on
-            supplied specifications, references and project information.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-number">05</div>
-          <h3>Revit &amp; BIM Documentation</h3>
-          <p>
-            Revit and BIM documentation support for coordinated
-            architectural and construction workflows.
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-number">06</div>
-          <h3>As-Built &amp; Revisions</h3>
-          <p>
-            Drawing updates, markup incorporation, revision work and
-            as-built documentation.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- DELIVERABLES -->
-  <section>
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-kicker">Typical Deliverables</span>
-
-        <h2>
-          What can you send us?
-        </h2>
-
-        <p>
-          Projects often begin with existing information rather than a
-          blank page. Our workflow can start from the material you already
-          have.
-        </p>
-      </div>
-
-      <div class="deliverables-grid">
-
-        <div class="deliverable">
-          <div class="deliverable-icon">01</div>
-          <div>
-            <h3>Existing CAD Files</h3>
-            <p>
-              Existing DWG files requiring updates, revisions,
-              documentation or drawing production.
-            </p>
-          </div>
-        </div>
-
-        <div class="deliverable">
-          <div class="deliverable-icon">02</div>
-          <div>
-            <h3>Markups &amp; Redlines</h3>
-            <p>
-              Marked-up drawings and revision instructions requiring
-              clean drafting implementation.
-            </p>
-          </div>
-        </div>
-
-        <div class="deliverable">
-          <div class="deliverable-icon">03</div>
-          <div>
-            <h3>Sketches &amp; References</h3>
-            <p>
-              Sketches, PDFs, reference drawings and other project
-              information used as drafting inputs.
-            </p>
-          </div>
-        </div>
-
-        <div class="deliverable">
-          <div class="deliverable-icon">04</div>
-          <div>
-            <h3>Project Standards</h3>
-            <p>
-              Drawing standards, templates, layer conventions and
-              documentation requirements supplied by your team.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- WHO WE SUPPORT -->
-  <section class="audience">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-kicker">Who We Support</span>
-
-        <h2>
-          Built around professional project workflows.
-        </h2>
-
-        <p>
-          Cadvexa is positioned to support teams that already understand
-          their project requirements and need additional drafting capacity.
-        </p>
-      </div>
-
-      <div class="audience-grid">
-
-        <div class="audience-card">
-          <h3>Architecture Firms</h3>
-          <p>
-            Documentation production, drawing updates, detailing and
-            additional CAD/BIM support during active project stages.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Construction Teams</h3>
-          <p>
-            Construction drawings, shop drawing support, revisions and
-            documentation updates.
-          </p>
-        </div>
-
-        <div class="audience-card">
-          <h3>Engineering &amp; Specialist Teams</h3>
-          <p>
-            Drafting and documentation support where additional production
-            capacity is required.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-kicker">Process</span>
-
-        <h2>
-          A straightforward workflow.
-        </h2>
-
-        <p>
-          Clear inputs, defined scope and structured revisions help keep
-          drafting work predictable.
-        </p>
-      </div>
-
-      <div class="process-grid">
-
-        <div class="process-card">
-          <div class="process-number">01</div>
-          <h3>Project Brief</h3>
-          <p>
-            Share the drawing scope, references, requirements and
-            expected deliverables.
-          </p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number">02</div>
-          <h3>Scope &amp; Approach</h3>
-          <p>
-            We review the information provided and clarify the required
-            drafting output.
-          </p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number">03</div>
-          <h3>Draft &amp; Review</h3>
-          <p>
-            Drawings are produced and returned for review, comments and
-            required revisions.
-          </p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number">04</div>
-          <h3>Final Delivery</h3>
-          <p>
-            Updated drawing files and documentation are organized and
-            delivered in the agreed format.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- PORTFOLIO -->
-  <section>
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-kicker">Project Work</span>
-
-        <h2>
-          Selected work can go here.
-        </h2>
-
-        <p>
-          A strong B2B drafting website should eventually show the quality
-          of the work, not just describe it.
-        </p>
-      </div>
-
-      <div class="portfolio-note">
-
-        <h3>Portfolio coming next</h3>
-
-        <p>
-          This area is intentionally reserved for real Cadvexa project
-          samples. We can add anonymized drawing sheets, CAD examples,
-          BIM views, shop drawings and documentation samples here as they
-          become available.
-        </p>
-
-        <small>
-          REAL PROJECT EVIDENCE &gt; GENERIC MARKETING CLAIMS
-        </small>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-
-      <h2>
-        Need additional drafting capacity?
-      </h2>
-
-      <p>
-        Send us your project scope, drawing requirements or markups.
-        We'll review the requirement and discuss the appropriate support.
-      </p>
-
-      <a
-        href="mailto:nemat@cadvexa.com?subject=Cadvexa%20Project%20Enquiry"
-        class="btn btn-primary"
-      >
-        Discuss a Project
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#home" class="logo">
+        CAD<span>VEXA</span>
       </a>
 
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="#capabilities">Capabilities</a>
+          </li>
+
+          <li>
+            <a href="#services">Services</a>
+          </li>
+
+          <li>
+            <a href="#process">Process</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="nav-cta">
+              Start a Conversation
+            </a>
+          </li>
+        </ul>
+      </nav>
+
     </div>
-  </section>
+  </header>
 
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
+  <main>
 
-      <div class="contact-box">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-        <span class="section-kicker">Contact</span>
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            CAD • Architectural Documentation • BIM
+          </div>
+
+          <h1>
+            CAD and drafting support for
+            <span>professional project teams.</span>
+          </h1>
+
+          <p class="hero-description">
+            Cadvexa provides CAD drafting and documentation support
+            for architecture, construction and engineering teams
+            that need dependable production capacity without adding
+            permanent drafting overhead.
+          </p>
+
+          <div class="buttons">
+
+            <a href="#contact" class="btn btn-primary">
+              Discuss Your Project
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+              Explore Services
+            </a>
+
+          </div>
+
+          <p class="hero-note">
+            Support can be structured around individual drawing
+            requirements, project-based work or recurring documentation
+            needs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         POSITIONING
+    ========================== -->
+
+    <div class="intro-strip">
+
+      <div class="container intro-grid">
+
+        <div class="intro-item">
+          <strong>Production Support</strong>
+          <span>
+            Additional drafting capacity when your internal team
+            needs it.
+          </span>
+        </div>
+
+        <div class="intro-item">
+          <strong>Documentation Focused</strong>
+          <span>
+            Plans, sections, details, schedules, revisions and
+            drawing packages.
+          </span>
+        </div>
+
+        <div class="intro-item">
+          <strong>Flexible Engagement</strong>
+          <span>
+            Support structured around your project requirements.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CAPABILITIES
+    ========================== -->
+
+    <section id="capabilities">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Capabilities
+          </span>
+
+          <h2>
+            A practical extension of your project team.
+          </h2>
+
+          <p>
+            Cadvexa is built to take defined drafting and documentation
+            requirements off your team's workload and return organized,
+            usable drawing output.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-copy">
+
+            <p>
+              Cadvexa supports architecture, construction and engineering
+              workflows with CAD and documentation services across
+              different stages of a project.
+            </p>
+
+            <p>
+              You can provide existing drawings, markups, sketches,
+              PDFs, references or project requirements. We work from
+              the information provided, clarify the scope and produce
+              the required drafting output.
+            </p>
+
+            <p>
+              The emphasis is on clear communication, organized
+              documentation and a revision workflow that makes project
+              coordination easier.
+            </p>
+
+          </div>
+
+
+          <div class="capability-panel">
+
+            <h3>
+              Core capabilities
+            </h3>
+
+            <ul class="capability-list">
+
+              <li>
+                2D CAD drafting and drawing production
+              </li>
+
+              <li>
+                Architectural plans, elevations and sections
+              </li>
+
+              <li>
+                Construction details and documentation
+              </li>
+
+              <li>
+                Structural drafting support
+              </li>
+
+              <li>
+                Shop and fabrication drawing support
+              </li>
+
+              <li>
+                Revit and BIM documentation
+              </li>
+
+              <li>
+                Drawing revisions and markup incorporation
+              </li>
+
+              <li>
+                As-built and record drawing updates
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services" id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Services
+          </span>
+
+          <h2>
+            Drafting and documentation support.
+          </h2>
+
+          <p>
+            Focused services that can be used individually or combined
+            into a broader project workflow.
+          </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+          <article class="service-card">
+
+            <div class="service-number">
+              01
+            </div>
+
+            <h3>
+              CAD Drafting
+            </h3>
+
+            <p>
+              2D CAD drawing production, updates and documentation
+              based on supplied project information and requirements.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              02
+            </div>
+
+            <h3>
+              Architectural Documentation
+            </h3>
+
+            <p>
+              Plans, elevations, sections, details and supporting
+              construction documentation.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              03
+            </div>
+
+            <h3>
+              Structural Drafting
+            </h3>
+
+            <p>
+              Drafting support for structural plans, details and
+              construction-related drawing packages.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              04
+            </div>
+
+            <h3>
+              Shop Drawings
+            </h3>
+
+            <p>
+              Fabrication and installation drawing support based on
+              supplied specifications, references and project
+              information.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              05
+            </div>
+
+            <h3>
+              Revit &amp; BIM Documentation
+            </h3>
+
+            <p>
+              Revit and BIM documentation support for coordinated
+              architectural and construction workflows.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              06
+            </div>
+
+            <h3>
+              As-Built &amp; Revisions
+            </h3>
+
+            <p>
+              Drawing updates, markup incorporation, revision work
+              and as-built documentation.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT INPUTS
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Project Inputs
+          </span>
+
+          <h2>
+            Start with the information you already have.
+          </h2>
+
+          <p>
+            Projects often begin with existing information rather than
+            a blank page. Your team can provide the available project
+            material and define the required output.
+          </p>
+
+        </div>
+
+
+        <div class="deliverables-grid">
+
+          <div class="deliverable">
+
+            <div class="deliverable-icon">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Existing CAD Files
+              </h3>
+
+              <p>
+                Existing DWG files requiring updates, revisions,
+                documentation or drawing production.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="deliverable">
+
+            <div class="deliverable-icon">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Markups &amp; Redlines
+              </h3>
+
+              <p>
+                Marked-up drawings and revision instructions requiring
+                clean drafting implementation.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="deliverable">
+
+            <div class="deliverable-icon">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Sketches &amp; PDFs
+              </h3>
+
+              <p>
+                Sketches, PDFs, reference drawings and other project
+                information used as drafting inputs.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="deliverable">
+
+            <div class="deliverable-icon">
+              04
+            </div>
+
+            <div>
+
+              <h3>
+                Project Standards
+              </h3>
+
+              <p>
+                Drawing standards, templates, layer conventions and
+                documentation requirements supplied by your team.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHO WE SUPPORT
+    ========================== -->
+
+    <section class="audience">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Who We Support
+          </span>
+
+          <h2>
+            Built around professional project workflows.
+          </h2>
+
+          <p>
+            Cadvexa is positioned to support teams that already
+            understand their project requirements and need additional
+            drafting and documentation capacity.
+          </p>
+
+        </div>
+
+
+        <div class="audience-grid">
+
+          <div class="audience-card">
+
+            <h3>
+              Architecture Firms
+            </h3>
+
+            <p>
+              Documentation production, drawing updates, detailing
+              and additional CAD or BIM support during active project
+              stages.
+            </p>
+
+          </div>
+
+
+          <div class="audience-card">
+
+            <h3>
+              Construction Teams
+            </h3>
+
+            <p>
+              Construction drawings, shop drawing support, revisions
+              and documentation updates.
+            </p>
+
+          </div>
+
+
+          <div class="audience-card">
+
+            <h3>
+              Engineering &amp; Specialist Teams
+            </h3>
+
+            <p>
+              Drafting and documentation support where additional
+              production capacity is required.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY CADVEXA
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Why Cadvexa
+          </span>
+
+          <h2>
+            Designed for the way project teams actually work.
+          </h2>
+
+          <p>
+            Good drafting support is not only about producing drawings.
+            It is about fitting into an existing project workflow.
+          </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+          <div class="why-card">
+
+            <h3>
+              Additional Production Capacity
+            </h3>
+
+            <p>
+              Add drafting support when project workload increases
+              without immediately expanding permanent internal
+              staffing.
+            </p>
+
+          </div>
+
+
+          <div class="why-card">
+
+            <h3>
+              Work From Your Information
+            </h3>
+
+            <p>
+              Existing CAD files, PDFs, markups, sketches and project
+              standards can be used as the starting point.
+            </p>
+
+          </div>
+
+
+          <div class="why-card">
+
+            <h3>
+              Structured Revisions
+            </h3>
+
+            <p>
+              Drawing comments and markups can be incorporated into
+              subsequent revisions as part of the project workflow.
+            </p>
+
+          </div>
+
+
+          <div class="why-card">
+
+            <h3>
+              Flexible Support
+            </h3>
+
+            <p>
+              Support can be discussed around individual drawing
+              requirements, project-based work or recurring needs.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section class="process" id="process">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Process
+          </span>
+
+          <h2>
+            A straightforward workflow.
+          </h2>
+
+          <p>
+            Clear inputs, defined scope and structured revisions help
+            keep drafting work predictable.
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+          <div class="process-card">
+
+            <div class="process-number">
+              01
+            </div>
+
+            <h3>
+              Project Brief
+            </h3>
+
+            <p>
+              Share the drawing scope, references, requirements and
+              expected deliverables.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="process-number">
+              02
+            </div>
+
+            <h3>
+              Scope &amp; Approach
+            </h3>
+
+            <p>
+              Review the available information and clarify the
+              required drafting output.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="process-number">
+              03
+            </div>
+
+            <h3>
+              Draft &amp; Review
+            </h3>
+
+            <p>
+              Produce the drawings and incorporate review comments
+              and required revisions.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="process-number">
+              04
+            </div>
+
+            <h3>
+              Final Delivery
+            </h3>
+
+            <p>
+              Organize and deliver the updated drawing files in the
+              agreed format.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-kicker">
+            Project Work
+          </span>
+
+          <h2>
+            Let the work speak for itself.
+          </h2>
+
+          <p>
+            Real drawing samples are the strongest way to demonstrate
+            drafting capability. This section is structured so genuine
+            Cadvexa work can be added without changing the rest of the
+            website.
+          </p>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+          <div class="portfolio-placeholder">
+
+            <div>
+
+              <h3>
+                Architectural Documentation
+              </h3>
+
+              <p>
+                Add a real, permission-cleared drawing sample here.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="portfolio-placeholder">
+
+            <div>
+
+              <h3>
+                CAD / Construction Drawings
+              </h3>
+
+              <p>
+                Add a real drawing or documentation sample here.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="portfolio-placeholder">
+
+            <div>
+
+              <h3>
+                BIM / Revit Work
+              </h3>
+
+              <p>
+                Add a genuine BIM or Revit sample here when available.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+      <div class="container">
 
         <h2>
-          Let's discuss your project.
+          Need additional drafting capacity?
         </h2>
 
         <p>
-          Tell us what you need drafted, updated or documented. Include
-          any available drawings, markups or project information when
-          appropriate.
+          Send us your project scope, drawing requirements, markups or
+          available reference material. We'll review the requirement
+          and discuss the appropriate support.
         </p>
-
-        <a
-          href="mailto:nemat@cadvexa.com"
-          class="email"
-        >
-          nemat@cadvexa.com
-        </a>
-
-        <br>
 
         <a
           href="mailto:nemat@cadvexa.com?subject=Cadvexa%20Project%20Enquiry"
           class="btn btn-primary"
-          style="background:#0a1c2d;color:#fff;"
         >
-          Send Project Enquiry
+          Discuss a Project
         </a>
 
-        <div class="contact-note">
-          We welcome project enquiries, recurring drafting requirements
-          and requests for additional information.
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <span class="section-kicker">
+            Contact
+          </span>
+
+          <h2>
+            Let's discuss your project.
+          </h2>
+
+          <p>
+            Tell us what you need drafted, updated or documented.
+            Include available drawings, markups or project information
+            when appropriate.
+          </p>
+
+          <a
+            href="mailto:nemat@cadvexa.com"
+            class="email"
+          >
+            nemat@cadvexa.com
+          </a>
+
+          <br>
+
+          <a
+            href="mailto:nemat@cadvexa.com?subject=Cadvexa%20Project%20Enquiry"
+            class="btn btn-dark"
+          >
+            Send Project Enquiry
+          </a>
+
+          <div class="contact-note">
+            Project enquiries, recurring drafting requirements and
+            requests for additional information are welcome.
+          </div>
+
         </div>
 
       </div>
 
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div class="footer-logo">
+        CADVEXA
+      </div>
+
+      <p>
+        CAD &amp; Drafting Support for Architecture, Construction
+        &amp; Engineering
+      </p>
+
+      <p>
+        &copy; 2026 Cadvexa. All rights reserved.
+      </p>
+
     </div>
-  </section>
 
-</main>
-
-
-<footer>
-  <div class="container footer-content">
-
-    <div class="footer-logo">
-      CADVEXA
-    </div>
-
-    <p>
-      CAD &amp; Drafting Support for Architecture, Construction &amp; Engineering
-    </p>
-
-    <p>
-      &copy; 2026 Cadvexa. All rights reserved.
-    </p>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
-```
